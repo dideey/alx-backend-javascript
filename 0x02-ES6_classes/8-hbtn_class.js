@@ -4,11 +4,20 @@ export default class HolbertonClass {
     this._location = location;
   }
 
-  valueOf() {
+  get size() {
     return this._size;
   }
 
-  tostring() {
+  get location() {
     return this._location;
   }
+
+  valueOf() {
+    return this.size;
+  }
+
+  toString() {
+    return this.location;
+  }
+
 }
