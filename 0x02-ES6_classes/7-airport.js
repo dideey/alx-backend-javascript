@@ -5,6 +5,6 @@ export default class Airport {
   }
 
   tostring() {
-    return `object ${this._code}`;
+    return `[object ${this._code}]`;
   }
 }
