@@ -4,7 +4,15 @@ export default class Airport {
     this._code = code;
   }
 
-  tostring() {
+  get name() {
+    return this._name;
+  }
+
+  get code() {
+    return this._code;
+  }
+
+  toString() {
     return `[object ${this._code}]`;
   }
 }
