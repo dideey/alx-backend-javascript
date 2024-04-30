@@ -1,10 +1,11 @@
 // eslint-disable-next-line
 export default function createInt8TypedArray (length, position, value) {
-  if (position >= length) {
+  const buffer = new ArrayBuffer(length);
+  const objectview = new DataView(buffer);
+  try {
+    objectview.setInt8(position, value);
+  } catch (e) {
     throw new Error('Position outside range');
   }
-  const buffer = new ArrayBuffer(length);
-  const int8View = new Int8Array(buffer);
-  int8View[position] = value;
-  return int8View;
+  return objectview;
 }
